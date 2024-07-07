@@ -20,6 +20,7 @@ io.on('connect', (socket) => {
     console.log('Connected menber:' + socket.id);
     
     socket.on("joinQ", async (data) => {
+        try{
         quiz = await QuizModel.findOne({ Quizid: data })
         console.log("socket id on join "+socket.id)
         socket.join(data)
@@ -31,6 +32,10 @@ io.on('connect', (socket) => {
         else {
             io.to(data).emit("bad_join", "invalid request")
         }
+      }
+      catch(exp){
+        console.log(exp)
+      }
     })
     socket.on("addUser", async (data) => {
         data = JSON.parse(data)
