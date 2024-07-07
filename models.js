@@ -1,7 +1,14 @@
 // 'use server'
 const mongoose=require('mongoose')
 // mongoose.connect('mongodb://127.0.0.1:27017/warehouse', { useNewUrlParser: true, UseUnifiedTopology: true });
-mongoose.connect('mongodb+srv://souptik0537:AKYIMXr55UtGZvuP@cluster0.paqcckc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/warehouse')
+mongoose.connect('mongodb+srv://souptik0537:AKYIMXr55UtGZvuP@cluster0.paqcckc.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0')
+.catch ((e)=>{
+    console.log("Failed to connect to Db")
+})
+mongoose.connection.on('connected',()=>{
+    console.log("Sucessfully connected to Db")
+})
+
 // all models..
 const UserSchema=new mongoose.Schema({
     Uname:String,

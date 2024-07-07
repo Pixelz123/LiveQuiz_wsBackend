@@ -1,0 +1,18 @@
+{
+  "name": "lq_backend",
+  "version": "1.0.0",
+  "description": "socket io server for backend communication",
+  "main": "io_server.js",
+  "scripts": {
+    "build": "node io_server.js",
+    "run": "node io_server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Pixelz",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^8.4.5",
+    "socket.io": "^4.7.5"
+  }
+}
