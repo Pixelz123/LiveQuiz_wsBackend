@@ -7,7 +7,9 @@ const serverhandler = (req, res) => {
     res.end();
 }
 const server = http.createServer(serverhandler);
-server.listen(8080,'0.0.0.0');
+server.listen(8080,'0.0.0.0',()=>{
+    console.log('listening on '+'0.0.0.0:8080')
+})
 const io = new Server(server, {
     cors: {
         origin: '*'
