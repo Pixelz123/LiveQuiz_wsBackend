@@ -4,6 +4,7 @@
   "description": "socket io server for backend communication",
   "main": "io_server.js",
   "scripts": {
+    "start": "node io_server.js",
     "build": "node io_server.js",
     "run": "node io_server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
