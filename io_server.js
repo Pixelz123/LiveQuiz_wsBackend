@@ -7,7 +7,7 @@ const serverhandler = (req, res) => {
     res.end();
 }
 const server = http.createServer(serverhandler);
-server.listen(8080);
+server.listen(8080,'0.0.0.0');
 const io = new Server(server, {
     cors: {
         origin: '*'
